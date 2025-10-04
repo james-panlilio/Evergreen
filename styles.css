@@ -1,0 +1,617 @@
+/* Stats Overview Styling */
+.stats-overview {
+  background: #FFFDD0;
+  border: 3px solid #654321;
+  border-radius: 18px;
+  box-shadow: 1px 2px 0 rgba(21,30,8,.15);
+  margin: 24px 0 12px 0;
+  padding: 18px 28px;
+  width: 80vw;
+  max-width: 500px;
+  text-align: left;
+}
+.stats-overview h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #151E08;
+}
+.stats-overview ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.stats-overview li {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #0C3808;
+}
+.stats-overview strong {
+  color: #654321;
+}
+/* Reset + base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #74A662;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+/* Layout */
+.toDoDiv {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  gap: 14px;
+}
+
+.top-section {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Date card */
+.datetime {
+  width: 30%;
+  height: 100%;
+  background-color: #FFFDD0;
+  border: 4px solid #654321;
+  border-radius: 25px;
+  box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#day {
+  font-size: 4vmin;
+  font-weight: 600;
+}
+#number {
+  font-size: 8vmin;
+  color: #FFFDD0;
+  background-color: #0C3808;
+  padding: 6px 12px;
+  border-radius: 50px;
+}
+#month {
+  font-size: 3.5vmin;
+}
+
+/* Right side */
+.right-section {
+  width: 66%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Progress card */
+.progression {
+  height: 60%;
+  background-color: #FFFDD0;
+  border: 4px solid #654321;
+  border-radius: 25px;
+  box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+.progression h3 {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 50px;
+}
+#progress-bar {
+  appearance: none;
+  height: 30px;
+  width: 70%;
+  border-radius: 10px;
+}
+#progress-bar::-webkit-progress-bar {
+  background-color: #CAC7B1;
+  border-radius: 10px;
+}
+#progress-bar::-webkit-progress-value {
+  background-color: #0C3808;
+  border-radius: 10px;
+  transition: width 0.35s ease-in-out;
+}
+
+/* Add task row */
+.add-task {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.add-task input {
+  outline: none;
+  border: 3px solid #654321;
+  background-color: #FFFDD0;
+  padding: 14px 18px;
+  margin-top: 12px;
+  border-radius: 50px;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  font-family: 'Pixelify Sans', sans-serif;
+  box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+}
+.add-task button {
+  font-size: 36px;
+  color: #FFFDD0;
+  background-color: #0C3808;
+  border: 3px#654321;
+  border-radius: 16px;
+  padding: 10px 18px;
+  cursor: pointer;
+  box-shadow: 1px 2px 0 rgba(21,30,8,.4);
+}
+#add-btn:hover {
+  transform: scale(1.06) perspective(1px);
+  transition: transform .2s ease;
+}
+
+/* Bottom list card */
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 50%;
+  background-color: #FFFDD0;
+  border: 4px solid #654321;
+  border-radius: 25px;
+  box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+  padding: 16px;
+  overflow: hidden;
+}
+
+/* UL/LIs */
+#task-list {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Each row is a flex line: icon | text .......................... × */
+#task-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 4px;
+  font-size: 22px;
+  color: #151E08;
+  
+}
+
+#task-list li .bx {
+  color: #151E08;     /* leaf color */
+  flex: 0 0 auto;
+}
+
+#task-list li .task-text {
+  flex: 1 1 auto;     /* text grows */
+  min-width: 0;
+  word-break: break-word;
+  cursor: pointer;
+}
+#task-list li :hover {
+  transform: scale(1.01) perspective(1px);
+  transition: transform .2s ease;
+}
+
+/* the delete × sits on the far right */
+#task-list li .delete {
+  margin-left: auto;  /* push to the edge */
+  color: #B33A3A;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 6px;
+}
+
+/* checked style: only strike the text */
+#task-list li.checked .task-text {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Custom scrollbar for the whole task list */
+#task-list::-webkit-scrollbar {
+  width: 12px;
+}
+
+#task-list::-webkit-scrollbar-track {
+  background: #CAC7B1;
+  border-radius: 10px;
+}
+
+#task-list::-webkit-scrollbar-thumb {
+  background: #6E763F;         
+  border-radius: 10px;
+  border: 2px solid #FFFDD0;
+}
+
+#task-list::-webkit-scrollbar-thumb:hover {
+  background: #4d5630;
+}
+
+
+/* Finish button */
+#finish-btn {
+  font-size: 20px;
+  color: #FEF6F0;
+  background-color: #0C3808;
+  border: 4px solid #0C3808;
+  border-radius: 10px;
+  padding: 8px 24px;
+  box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+  cursor: pointer;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+#finish-btn:hover {
+  transform: scale(1.05) perspective(1px);
+  transition: transform .2s ease;
+}
+
+/*====== Finish Day =====*/
+.finishDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    padding: 32px;
+    justify-content: flex-start;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+#finishText{
+    font-weight: 400;
+    font-size: 120px;
+    color: #151E08;
+}
+.finishImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.finishImg img{
+    height: 400px;
+    width: auto;
+}
+
+.finalProgress h3 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 50px;
+    color: #151E08;
+}
+
+/* Final Progress bar */
+#final-progress {
+  appearance: none;
+  height: 30px;
+  width: 70%;
+  border-radius: 10px;
+}
+
+#final-progress::-webkit-progress-bar {
+  background-color: #CAC7B1;
+  border-radius: 10px;
+}
+
+#final-progress::-webkit-progress-value {
+  background-color: #0C3808;
+  border-radius: 10px;
+  transition: width 0.35s ease-in-out;
+}
+
+.finalProgress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.finalProgress h3 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 50px;
+  color: #151E08;
+}
+
+.percent-label {
+  font-size: 24px;
+  color: #151E08;
+}
+
+#home-btn, #back-btn, #timer-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 75px;
+  background: #0C3808;
+  border-radius: 10px;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 20px;
+  color: #FFFDD0;
+  text-decoration: none;
+  box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+  margin: 25px 10px 10px 10px;
+}
+#home-btn:hover, #back-btn:hover, #timer-btn:hover {
+    cursor: pointer;
+    transform: scale(1.06) perspective(1px);
+    transition: transform .2s ease;
+}
+
+/*======== Home Page ========*/
+.homeDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    gap: 14px;
+}
+.homeDiv img{
+    width: 25%;
+    height: auto;
+}
+.homeDiv h1 {
+    font-size: 100px;
+    color: #0C3808;
+}
+.homeBtns{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+#list-btn, #timer-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 75px;
+  background: #0C3808;
+  border-radius: 10px;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 20px;
+  color: #FFFDD0;
+  text-decoration: none;
+  box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+  margin:25px 10px 10px 10px;
+}
+
+#list-btn:hover, #timer-btn:hover{
+  cursor: pointer;
+  transform: scale(1.06) perspective(1px);
+  transition: transform .2s ease;
+}
+
+/*======== Pomodoro Timer ========*/
+.timerDiv {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  gap: 14px;
+}
+
+.timerDiv .top-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.pomoDiv, .shortBreak, .longBreak {
+  width: 450px;
+  background-color: #FFFDD0;
+  border: 4px solid #654321;
+  border-radius: 25px;
+  box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+  text-align: center;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 30px;
+}
+
+/* ===== Time selectors in the three top boxes ===== */
+.time-control {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  align-items: center;
+  gap: 10px;
+  width: 80%;
+  margin: 8px auto 16px;
+}
+
+.time-control .display {
+  background: #FFFDD0;
+  border: 3px solid #654321;
+  border-radius: 14px;
+  padding: 8px 12px;
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: 1px;
+  box-shadow: 1px 2px 0 rgba(21,30,8,.25);
+}
+
+.time-control .display .mm,
+.time-control .display .ss {
+  min-width: 2ch;            /* keeps 2-digit width */
+  display: inline-block;
+  text-align: center;
+}
+
+.time-control .arrow {
+  height: 48px;
+  width: 48px;
+  border-radius: 12px;
+  border: 3px solid #654321;
+  background: #FFFDD0;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 1px 2px 0 rgba(21,30,8,.25);
+}
+
+.time-control .arrow:hover {
+  transform: scale(1.06) perspective(1px);
+  transition: transform .15s ease;
+}
+
+/* Make the three cards play nice with the picker width */
+.pomoDiv, .shortBreak, .longBreak {
+  align-items: center;
+  gap: 8px;
+}
+
+.bottom-section h3 {
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+#finishTime-btn {
+  width: 150px;
+  height: 75px;
+  font-size: 20px;
+  color: #FFFDD0;
+  background-color: #0C3808;
+  border: 4px solid #0C3808;
+  border-radius: 10px;
+  padding: 8px 24px;
+  box-shadow: 2px 2px 4px rgba(21, 30, 8, 0.6);
+  cursor: pointer;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+#finishTime-btn:hover {
+  transform: scale(1.05) perspective(1px);
+  transition: transform .2s ease;
+}
+
+/* ====== Bottom timer UI ====== */
+.timer-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 34px;
+  color: #151E08;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+.timer-header .dot { 
+  opacity:.5; 
+}
+
+.timer-display{
+  font-size: 100px;
+  line-height: 1;
+  text-align: center;
+  color:#151E08;
+  letter-spacing: 2px;
+  margin: 6px 0 12px;
+}
+
+.timer-controls{
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.timer-controls button{
+  min-width: 120px;
+  height: 56px;
+  font-size: 22px;
+  border: 3px solid #654321;
+  border-radius: 12px;
+  background:#FFFDD0;
+  color:#151E08;
+  box-shadow: 1px 2px 0 rgba(21,30,8,.25);
+  cursor: pointer;
+  font-family: 'Pixelify Sans',sans-serif;
+}
+.timer-controls button.primary { 
+  background:#0C3808;
+  color:#FFFDD0;
+  border-color:#0C3808;
+
+}
+.timer-controls button:disabled{
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+#timer-hint{
+  text-align:center;
+  font-size: 16px;
+  opacity: .65;
+  margin-top: 2px;
+}
+
+/*========= Finish Timer Page =========*/
+.finishTimeDiv {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  padding: 32px;
+  justify-content: flex-start;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+.finishTimeDiv h1 {
+  font-weight: 400;
+  font-size: 120px;
+  color: #151E08;
+}
+
+/* Page slide transitions */
+.slide-in-right  { animation: slideInRight  1.2s cubic-bezier(0.25,1,0.5,1) both; }
+.slide-out-left  { animation: slideOutLeft  1.2s cubic-bezier(0.25,1,0.5,1) both; }
+.slide-in-left   { animation: slideInLeft   1.2s cubic-bezier(0.25,1,0.5,1) both; }
+.slide-out-right { animation: slideOutRight 1.2s cubic-bezier(0.25,1,0.5,1) both; }
+
+@keyframes slideInRight  { from {transform: translateX(100%);  opacity:.8;} to {transform: translateX(0);   opacity:1;} }
+@keyframes slideOutLeft  { from {transform: translateX(0);     opacity:1;}   to {transform: translateX(-100%);opacity:.8;} }
+@keyframes slideInLeft   { from {transform: translateX(-100%); opacity:.8;}  to {transform: translateX(0);   opacity:1;} }
+@keyframes slideOutRight { from {transform: translateX(0);     opacity:1;}   to {transform: translateX(100%); opacity:.8;} }
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-in-right, .slide-out-left, .slide-in-left, .slide-out-right { animation: none; }
+}

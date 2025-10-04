@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Icons + Font -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <title>Evergreen</title>
+</head>
+<body>
+  <div class="toDoDiv">
+    <div class="top-section">
+      <!-- Date -->
+      <div class="datetime">
+        <span id="day"></span>
+        <span id="number"></span>
+        <span id="month"></span>
+      </div>
+
+      <div class="right-section">
+        <!-- Progress Bar -->
+        <div class="progression">
+          <h3>Progression</h3>
+          <progress id="progress-bar" value="0" max="100"></progress>
+        </div>
+        <!-- Add Task Input box -->
+        <div class="add-task">
+          <input id="write-task" type="text" placeholder="Write your task here..." />
+          <!-- Add button -->
+          <button id="add-btn">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-section">
+      <!-- Task list -->
+      <ul id="task-list"></ul>
+    </div>
+    <!-- Finish Day Button -->
+    <button id="finish-btn">FINISH DAY</button>
+  </div>
+
+  <script src="toDoList.js"></script>
+</body>
+</html>

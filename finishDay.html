@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <title>Evergreen</title>
+</head>
+
+<body>
+    <div class = "finishDiv">
+        <!-- Title and Image -->
+        <h1 id="finishText">Day Complete!</h1>
+        <div class = "finishImg">
+            <img src ="images/tree.png">
+        </div>
+        <!-- Final Progress -->
+        <div class="finalProgress">
+            <h3>Final Progress</h3>
+            <progress id="final-progress" value="0" max="100"></progress>
+            <div id="final-percent" class="percent-label">0%</div>
+        </div>
+        <!-- Buttons -->
+        <div class = "directBtns">
+            <button id="back-btn">Back</button>
+            <button id="home-btn">Home</button>
+        </div>
+    </div>
+
+    <script src="finishDay.js"></script>
+</body>
+</html>

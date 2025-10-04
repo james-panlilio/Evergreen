@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Evergreen</title>
+</head>
+
+<body>
+  <div class="timerDiv">
+    <div class="top-section">
+      <!-- Pomodoro -->
+      <div class="pomoDiv">
+        <h3>Pomodoro</h3>
+        <div class="time-control" data-key="pomo">
+          <button class="arrow down" aria-label="decrease pomodoro time">▼</button>
+          <div class="display"><span class="mm">25</span>:<span class="ss">00</span></div>
+          <button class="arrow up" aria-label="increase pomodoro time">▲</button>
+        </div>
+      </div>
+
+      <!-- Short Break -->
+      <div class="shortBreak">
+        <h3>Short Break</h3>
+        <div class="time-control" data-key="short">
+          <button class="arrow down" aria-label="decrease short break time">▼</button>
+          <div class="display"><span class="mm">05</span>:<span class="ss">00</span></div>
+          <button class="arrow up" aria-label="increase short break time">▲</button>
+        </div>
+      </div>
+
+      <!-- Long Break -->
+      <div class="longBreak">
+        <h3>Long Break</h3>
+        <div class="time-control" data-key="long">
+          <button class="arrow down" aria-label="decrease long break time">▼</button>
+          <div class="display"><span class="mm">15</span>:<span class="ss">00</span></div>
+          <button class="arrow up" aria-label="increase long break time">▲</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-section">
+    <div class="timer-header">
+        <span id="mode-label">Pomodoro </span>
+        <span class="dot">•</span>
+        <span id="cycle-label">Cycle <span id="cycle-count">1</span>/4</span>
+    </div>
+
+    <div class="timer-display">
+        <span id="count-mm">25</span>:<span id="count-ss">00</span>
+    </div>
+
+    <div class="timer-controls">
+        <button id="start-btn" class="primary">Start</button>
+        <button id="pause-btn">Pause</button>
+        <button id="reset-btn">Reset</button>
+    </div>
+
+    <div id="timer-hint">Uses the times set in the three boxes above.</div>
+    </div>
+
+    <!-- Finish Time Button -->
+    <button id="finishTime-btn">Finish Time</button>
+  </div>
+
+  <script src="pomoTimer.js"></script>
+</body>
+</html>
