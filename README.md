@@ -5,6 +5,6 @@
 Evergreen is one week-long project that I created to further my JavaScript knowledge and also to personally use to improve my lifestyle.
 
 It was built with:
-· HTML
-· CSS
-· JavaScript
+- HTML
+- CSS
+- JavaScript
